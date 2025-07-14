@@ -1,23 +1,31 @@
 {% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
 
 {% block content %}
+<div class="container my-5">
+  <div class="pb-2 mb-4 border-bottom">
+    <h2 class="text-center">Create your account</h2>
+  </div>
 
-  <form action="{% url 'accounts:register' %}" method='post'>
+  <form action="{% url 'accounts:register' %}" method="post" class="needs-validation" novalidate>
     {% csrf_token %}
-    {{ form.as_div }}
 
-    <button name="submit">Register</button>
+    <div class="mb-3">
+      {% bootstrap_field form.username show_help=True %}
+    </div>
+
+    <div class="mb-3">
+      {% bootstrap_field form.password1 show_help=True %}
+    </div>
+
+    <div class="mb-3">
+      {% bootstrap_field form.password2 show_help=True %}
+    </div>
+
+    <div class="d-grid mt-4">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
   </form>
-
+</div>
 {% endblock content %}
 
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>-->

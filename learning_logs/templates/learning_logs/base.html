@@ -10,7 +10,7 @@
   {% bootstrap_javascript %}
 
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'learning_logs:index' %}">
@@ -60,7 +60,7 @@
     </div> <!-- Closes navbar's container -->
   </nav> <!-- End of navbar -->
 
-  <main class="container">
+  <main class="container flex-grow-1">
     <div class="pb-2 mb-2 border-bottom">
       {% block page_header %}{% endblock page_header %}
     </div>
@@ -71,4 +71,9 @@
   </main>
 
 </body>
+<footer class="footer mt-auto py-3 bg-light border">
+  <div class="container">
+    <span>© 2025 Josser Solano. All Rights Reserved.</span>
+  </div>
+</footer>
 </html>
